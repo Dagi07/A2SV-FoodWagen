@@ -185,6 +185,10 @@ a.secondary {
   font-size: 18px;
   font-weight: 700;
   line-height: 18px;
+  cursor: pointer;
+}
+.add_food_btn:hover {
+  opacity: 0.8;
 }
 
 .main {

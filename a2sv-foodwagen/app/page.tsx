@@ -1,6 +1,10 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
-import styles from "./page.module.css";
 import Card from "./card";
+import Modal from "./add-food.modal";
+import styles from "./page.module.css";
 
 interface Restaurant {
   id: number;
@@ -37,7 +41,15 @@ const restaurants: Restaurant[] = [
   // Add more restaurants here
 ];
 
+
 export default function Home() {
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleModalToggle = () => {
+    setIsModalOpen(!isModalOpen);
+  };
+
   return (
     <div className={styles.page}>
       <main className={styles.main}>
@@ -48,7 +60,7 @@ export default function Home() {
             width={154}
             height={37}
           />
-          <button className={styles.add_food_btn}>Add Food</button>
+          <button className={styles.add_food_btn} onClick={handleModalToggle}>Add Food</button>
         </header>
 
         <section className={styles.hero}>
@@ -97,6 +109,7 @@ export default function Home() {
           </div>
         </section>
       </main>
+      <Modal isOpen={isModalOpen} onClose={handleModalToggle} />
       <footer className={styles.footer}>
         <p>&copy; 2025 FoodWagen. All rights reserved.</p>
       </footer>
