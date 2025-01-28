@@ -84,6 +84,17 @@ export default function Home() {
               />
             ))}
           </div>
+          <div className={styles.row_1}>
+            {/* Render multiple cards dynamically */}
+            {restaurants.map((restaurant) => (
+              <Card
+                key={restaurant.id}
+                name={restaurant.name}
+                rating={restaurant.rating}
+                image={restaurant.image}
+              />
+            ))}
+          </div>
         </section>
       </main>
       <footer className={styles.footer}>
