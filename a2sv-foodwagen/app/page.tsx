@@ -1,53 +1,53 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import Card from "./card";
+
+interface Restaurant {
+  id: number;
+  name: string;
+  rating: number;
+  image: string; // Path to the image
+}
+
+const restaurants: Restaurant[] = [
+  {
+    id: 1,
+    name: "Bow Lasagna",
+    rating: 4.6,
+    image: "/assets/images/bow_lasagna.avif",
+  },
+  {
+    id: 2,
+    name: "Spaghetti Junction",
+    rating: 4.2,
+    image: "/assets/images/bow_lasagna.avif", // Example
+  },
+  {
+    id: 3,
+    name: "Pizza Paradise",
+    rating: 4.8,
+    image: "/assets/images/bow_lasagna.avif", // Example
+  },
+  {
+    id: 4,
+    name: "Pizza Paradise",
+    rating: 4.8,
+    image: "/assets/images/bow_lasagna.avif", // Example
+  },
+  // Add more restaurants here
+];
 
 export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        {/* <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div> */}
         <header className={styles.header}>
-          <Image src="/assets/images/FoodWagen.png" alt="food wagen" width={154}
-          height={37} />
+          <Image
+            src="/assets/images/FoodWagen.png"
+            alt="food wagen"
+            width={154}
+            height={37}
+          />
           <button className={styles.add_food_btn}>Add Food</button>
         </header>
 
@@ -61,7 +61,10 @@ export default function Home() {
                 <button>Pickup</button>
               </div>
               <div className={styles.row_2}>
-                <input type="text" placeholder="What would you like to eat today?" />
+                <input
+                  type="text"
+                  placeholder="What would you like to eat today?"
+                />
                 <button>Find Food</button>
               </div>
             </div>
@@ -69,60 +72,22 @@ export default function Home() {
         </section>
 
         <section className={styles.restaurants}>
-          <h2>Features Restaurants</h2>
+          <h2>Featured Restaurants</h2>
           <div className={styles.row_1}>
-            <div className={styles.card}>
-              <Image src="/assets/images/bow_lasagna.avif" alt="food wagen" width={150}
-          height={150} />
-          <p>Bow Lasagna</p>
-          <p>4.6</p>
-            </div>
+            {/* Render multiple cards dynamically */}
+            {restaurants.map((restaurant) => (
+              <Card
+                key={restaurant.id}
+                name={restaurant.name}
+                rating={restaurant.rating}
+                image={restaurant.image}
+              />
+            ))}
           </div>
         </section>
       </main>
       <footer className={styles.footer}>
-        {/* <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a> */}
+        <p>&copy; 2025 FoodWagen. All rights reserved.</p>
       </footer>
     </div>
   );

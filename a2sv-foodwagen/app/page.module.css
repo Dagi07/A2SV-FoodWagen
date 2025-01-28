@@ -254,3 +254,8 @@ margin-top: 15px;
   color: #000;
 
 }
+
+.restaurants .row_1 {
+  display: flex;
+  justify-content: space-between;
+}
