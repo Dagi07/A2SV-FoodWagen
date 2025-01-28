@@ -107,41 +107,4 @@
     cursor: pointer;
   }
   
-  /* Validation Error Message */
-.error {
-    color: red;
-    font-size: 0.8rem;
-    margin-top: 0.5rem;
-  }
-  
-  /* Input Field Styling */
-  input {
-    padding: 0.5rem;
-    font-size: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    width: 100%;
-    margin-bottom: 1rem;
-  }
-  
-  /* Modal Submit Button */
-  .submit_btn {
-    padding: 0.5rem 1rem;
-    background: #0070f3;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  /* Close Button */
-  .close_btn {
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    background: #ddd;
-    color: #333;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
   
